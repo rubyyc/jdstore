@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
   layout "admin"
 
   def index
-    @products = Product.all
+    @products = Product.all.order("position asc")
   end
 
   def new
@@ -36,6 +36,18 @@ class Admin::ProductsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def move_up
+    @product = Product.find(params[:id])
+    @product.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @product = Product.find(params[:id])
+    @product.move_lower
+    redirect_to :back
   end
 
 

@@ -36,10 +36,14 @@ gem 'font-awesome-rails'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'acts_as_list', "0.9.13"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'pry'
+  gem 'pry', '0.10.4'
+  gem 'awesome_rails_console', "0.4.0"
+  # gem 'byebug', platform: :mri
 end
 
 group :development do
