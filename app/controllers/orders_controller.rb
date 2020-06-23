@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
         # flash[:notice] = "yyyy"
         # binding.pry
       end
+      current_cart.clean!
+      OrderMailer.notify_order_placed(@order).deliver!
       # flash[:notice] = "xxx"
       redirect_to order_path(@order.token)
     else

@@ -18,7 +18,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => 'public, max-age=172800'
+        'Cache-Control' => 'public, max-age=172800'
     }
   else
     config.action_controller.perform_caching = false
@@ -52,7 +52,21 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = {host: 'localhost:3000'}
+  # config.action_mailer.delivery_method = :letter_opener
+
+  # YAM67hYT9cOWmMsQ
+  # config.action_mailer.delivery_method = :letter_opener
+
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      address: "smtpcloud.sohu.com",
+      port: 25,
+      domain: "heroku.com",
+      authentication: "login",
+      enable_starttls_auto: true,
+      user_name: ENV["SEND_CLOUD_USER_NAME"],
+      password: ENV["SEND_CLOUD_USER_KEY"]
+  }
 
 end
