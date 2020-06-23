@@ -41,6 +41,7 @@ gem 'acts_as_list', "0.9.13"
 gem 'aasm'
 gem 'carrierwave-qiniu', "1.1.6"
 gem 'qiniu-rs'
+gem 'figaro'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'pry'
