@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-md-6">
     <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+      <section class="wow slideInLeft" data-wow-duration="2s" data-wow-delay="0.1s"><%= image_tag(@product.image.medium.url, class: "thumbnail") %></section>
+
+     <%= image_tag(@product.image.medium.url, class: "thumbnail wow slideInLeft", data:{wow_duration: "1s"}) %>
+
+
     <% else %>
       <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>

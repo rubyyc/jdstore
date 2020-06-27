@@ -17,5 +17,10 @@
 //= require bootstrap/dropdown
 //= require autosize.min
 //= require jquery.countdown.min
+//= require wow.min
 
 //= require_tree .
+
+$(document).ready(function(){
+    new WOW().init();
+});
