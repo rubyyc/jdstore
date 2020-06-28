@@ -46,6 +46,8 @@ gem 'rucaptcha', "2.1.3"
 
 gem 'dalli'
 
+gem 'impressionist', '~>1.6.1'
+
 group :production do
   gem 'pg'
 end
