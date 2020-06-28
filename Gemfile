@@ -42,6 +42,9 @@ gem 'aasm'
 gem 'carrierwave-qiniu', "1.1.6"
 gem 'qiniu-rs'
 gem 'figaro'
+gem 'rucaptcha', "2.1.3"
+
+gem 'dalli'
 
 group :production do
   gem 'pg'

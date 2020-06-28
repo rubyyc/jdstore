@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # get 'welcome/index'
+  get 'user', to: redirect('/user/sign_up')
   # root 'welcome#index'
   root 'products#index'
-
+  # mount RuCaptcha::Engine => "/rucaptcha"
   resources :products do
     member do
       post :add_to_cart
@@ -28,7 +28,13 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  # devise_for :users
+
+  devise_for :user, controllers: {
+      passwords: 'users/passwords',
+      registrations: 'users/registrations',
+      sessions: 'users/sessions'
+  }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :orders do
